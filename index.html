@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Eksponen • Kelas X</title>
+    <!-- Google Fonts untuk ikon logout -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
+        /* ===== RESET & VARIABLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -72,6 +74,8 @@
             position: relative;
             overflow: hidden;
         }
+
+        /* ===== HEADER ===== */
         .app-header {
             height: auto;
             min-height: var(--header-h);
@@ -135,6 +139,8 @@
             background: var(--card);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
+
+        /* ===== TOMBOL LOGOUT ===== */
         .logout-btn {
             display: flex;
             align-items: center;
@@ -153,7 +159,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
         .logout-btn .logout-icon {
-            font-size: 26px;
+            font-size: 22px;
             line-height: 1;
             color: var(--danger);
             transition: color var(--transition);
@@ -178,6 +184,8 @@
         .dark .logout-btn:hover {
             background: var(--danger);
         }
+
+        /* ===== INFO GURU ===== */
         .app-header .teacher-info {
             font-size: 12px;
             color: var(--text-light);
@@ -197,6 +205,8 @@
             font-weight: 600;
             color: var(--primary);
         }
+
+        /* ===== USER INFO ===== */
         .app-header .user-info {
             font-size: 13px;
             color: var(--text-light);
@@ -231,6 +241,8 @@
             padding: 0;
             margin: 0;
         }
+
+        /* ===== MAIN ===== */
         .main-content {
             flex: 1;
             overflow: hidden;
@@ -257,6 +269,8 @@
             visibility: visible;
             z-index: 2;
         }
+
+        /* ===== BOTTOM NAV ===== */
         .bottom-nav {
             height: var(--nav-h);
             background: var(--card);
@@ -321,6 +335,8 @@
         .nav-item .badge.show {
             transform: scale(1);
         }
+
+        /* ===== LOGIN ===== */
         .login-page {
             display: flex;
             flex-direction: column;
@@ -396,6 +412,8 @@
             margin-top: 12px;
             min-height: 20px;
         }
+
+        /* ===== HOME ===== */
         .greeting {
             margin-bottom: 20px;
         }
@@ -558,6 +576,8 @@
         .quick-btn.primary .qb-desc {
             color: rgba(255, 255, 255, 0.7);
         }
+
+        /* ===== MATERI ===== */
         .materi-tabs {
             display: flex;
             gap: 6px;
@@ -655,6 +675,8 @@
         .materi-content .example strong {
             color: var(--text);
         }
+
+        /* ===== KUIS ===== */
         .quiz-header {
             display: flex;
             justify-content: space-between;
@@ -805,6 +827,8 @@
             cursor: not-allowed;
             transform: none !important;
         }
+
+        /* ===== RESULTS & REVIEW ===== */
         .quiz-results {
             background: var(--card);
             border-radius: var(--radius);
@@ -977,6 +1001,8 @@
         .review-actions .btn-send:hover {
             background: #00a381;
         }
+
+        /* ===== PROGRESS ===== */
         .progress-overview {
             background: var(--card);
             border-radius: var(--radius);
@@ -1021,6 +1047,8 @@
             color: var(--text-light);
             opacity: 0.4;
         }
+
+        /* ===== SERTIFIKAT ===== */
         .certificate-wrap {
             background: var(--card);
             border-radius: var(--radius);
@@ -1149,6 +1177,8 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 420px) {
             .stats-grid {
                 grid-template-columns: 1fr 1fr 1fr;
@@ -1191,9 +1221,13 @@
             }
             .logout-btn {
                 padding: 0 10px;
-                width: 40px;
+                width: 44px;
+                height: 44px;
                 border-radius: 50%;
                 justify-content: center;
+            }
+            .logout-btn .logout-icon {
+                font-size: 26px;
             }
         }
         @media (min-width: 600px) {
@@ -1214,6 +1248,8 @@
                 padding-bottom: max(8px, env(safe-area-inset-bottom));
             }
         }
+
+        /* ===== PRINT ===== */
         @media print {
             body * {
                 visibility: hidden;
@@ -1338,9 +1374,9 @@
                 <div class="header-actions">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle tema">🌙</button>
                     <button class="logout-btn" id="logoutBtn" aria-label="Logout" title="Keluar">
-    <span class="logout-icon material-symbols-outlined">logout</span>
-    <span class="logout-text">Log Out</span>
-</button>
+                        <span class="logout-icon material-symbols-outlined">logout</span>
+                        <span class="logout-text">Log Out</span>
+                    </button>
                 </div>
             </div>
             <div class="teacher-info">
@@ -1355,6 +1391,7 @@
         </header>
 
         <div class="main-content">
+            <!-- ===== LOGIN ===== -->
             <div class="page active" id="page-login">
                 <div class="login-page">
                     <div class="login-box">
@@ -1370,6 +1407,7 @@
                 </div>
             </div>
 
+            <!-- ===== HOME ===== -->
             <div class="page" id="page-home">
                 <div class="greeting">
                     <h1>Halo, <span class="highlight" id="greetingName">Pelajar!</span></h1>
@@ -1433,6 +1471,7 @@
                 </div>
             </div>
 
+            <!-- ===== MATERI ===== -->
             <div class="page" id="page-materi">
                 <div class="materi-tabs" id="materiTabs">
                     <button class="materi-tab active" data-tab="pengertian">📖 Pengertian</button>
@@ -1446,14 +1485,17 @@
                 </div>
             </div>
 
+            <!-- ===== KUIS ===== -->
             <div class="page" id="page-kuis">
                 <div id="quizContainer"></div>
             </div>
 
+            <!-- ===== PROGRESS ===== -->
             <div class="page" id="page-progress">
                 <div id="progressContainer"></div>
             </div>
 
+            <!-- ===== SERTIFIKAT ===== -->
             <div class="page" id="page-sertifikat">
                 <div id="sertifikatContainer"></div>
             </div>
@@ -1485,6 +1527,7 @@
         </nav>
     </div>
 
+    <!-- ===== PDF LOADING ===== -->
     <div id="pdfLoading" style="display:none;" class="pdf-loading">
         <div class="loader">
             <div class="spinner"></div>
@@ -1493,8 +1536,10 @@
         </div>
     </div>
 
+    <!-- ===== LIBRARY HTML2PDF ===== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
     </script>
+
     <script>
         // ============================================================
         //  MATERI EKSPONEN
@@ -2361,7 +2406,7 @@
         //  KIRIM DATA KE SPREADSHEET
         // ============================================================
         function sendDataToSheet() {
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwMVI6cQBOcKEA-stTnVJuzD1XNQobESa8JMYw4nFhVyfFzovxmyAnkafB25FkACZhR/exec';
+            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbycfBwrHTCaoPHzzQFsTb3VLe-OiKxmahtyrr3C7U0VTCWTCvwjw3rCM3EbeaX4clZq/exec';
 
             const jawabanDetail = state.selectedAnswers.map((ans, idx) => {
                 const q = QUIZ_QUESTIONS[idx];
@@ -2545,4 +2590,4 @@
         console.log('📐 Aplikasi Eksponen siap! Selamat belajar!');
     </script>
 </body>
-</html>
+    </html>
